@@ -9,7 +9,7 @@ jobs:
   send_messages:
     runs-on: ubuntu-latest
 
-    steps:
+      steps:
       - name: Check out repo
         uses: actions/checkout@v4
 
