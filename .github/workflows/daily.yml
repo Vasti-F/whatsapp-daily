@@ -22,8 +22,9 @@ jobs:
         run: pip install twilio
 
       - name: Run send_test.py
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
-        run: python send_test.py
+  working-directory: ./whatsapp-daily
+  env:
+    TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+    TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
+    TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
+  run: python send_test.py
