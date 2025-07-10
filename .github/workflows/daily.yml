@@ -18,8 +18,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Twilio
-        run: pip install twilio
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install twilio
 
       - name: Run send_test.py
         env:
